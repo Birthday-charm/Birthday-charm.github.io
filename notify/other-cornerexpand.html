@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<link href="http://fonts.googleapis.com/css?family=Raleway:400,300,700" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/ns-default.css" />
+		<link rel="stylesheet" type="text/css" href="css/ns-style-other.css" />
+		<link rel="stylesheet" type="text/css" href="css/alphastyle2.css" />
+        <link href='http://fonts.googleapis.com/css?family=Lancelot|Abril+Fatface' rel='stylesheet' type='text/css' />
+		<script src="js/modernizr.custom.js"></script>
+		<script src="js/snap.svg-min.js"></script>
+		<!--[if IE]>
+  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body class="color-2">
+		<div class="notification-shape shape-box" id="notification-shape" data-path-to="m 0,0 500,0 0,500 -500,0 z">
+			<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 500 500" preserveAspectRatio="none">
+				<path d="m 0,0 500,0 0,500 0,-500 z"/>
+			</svg>
+		</div>
+		<div class="container">
+			<!-- Top Navigation -->
+			<header class="codrops-header">
+			
+				<div class="container">
+            <div class="header">
+			<h1>Hover Over Neema To See U</h1>
+            </div>
+			<div class="package">
+            <div id="letter-container" class="letter-container" style="margin-top:2px">
+				<h2><a href="#">Neema</a></h2>
+			</div>
+			</div>
+			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+			<script type="text/javascript" src="js/alphajquery.lettering.js"></script>
+			<script type="text/javascript">
+				$(function() {
+					$("#letter-container h2 a").lettering();
+				});
+			</script>
+        </div>
+			</header>
+			<div class="main clearfix">
+				<div class="column">
+					<p class="small">Click on the button to show the notification:</p>
+					<button id="notification-trigger" class="progress-button">
+						<span class="content">Show Notification</span>
+						<span class="progress"></span>
+					</button>
+				</div>
+				<div class="header">
+			<h3>Moments Of How We R Together Our Lifeline</h3>
+            </div>
+				<div class="column">
+					<nav class="codrops-demos">
+						<h2>FaceBook Age</h2>
+						<div>
+							<a href="other-thumbslider.html">The Notification </a>
+							<a href="bar-slidetop.html">Notification Made Me go Zoom </a>
+							<a href="bar-exploader.html">The Happiest Notification</a>
+							
+						</div>
+						<h2>Cellular Age</h2>
+						<div>
+						<a href="other-loadingcircle.html">Notification Jisme Phone ki Raunak Bda di</a>
+							<a href="growl-slide.html">Common Notification</a>
+						</div>
+						<h2>Hotel Age</h2>
+						<div>
+							<a href="attached-flip.html">My First Trip Notification</a>
+							<a href="attached-bouncyflip.html">Wow The Auspicous Day Of My Life</a>
+						</div>	
+						<h2>Future Notifications</h2>
+						<div>
+							<a href="other-cornerexpand.html">Still Waiting</a>
+							<a href="other-boxspinner.html">Still Waiting</a>
+							
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div><!-- /container -->
+		<script src="js/classie.js"></script>
+		<script src="js/notificationFx.js"></script>
+		<script>
+			(function() {
+				var svgshape = document.getElementById( 'notification-shape' ),
+					s = Snap( svgshape.querySelector( 'svg' ) ),
+					path = s.select( 'path' ),
+					pathConfig = {
+						from : path.attr( 'd' ),
+						to : svgshape.getAttribute( 'data-path-to' )
+					},
+					bttn = document.getElementById( 'notification-trigger' );
+
+				// make sure..
+				bttn.disabled = false;
+
+				bttn.addEventListener( 'click', function() {
+					// simulate loading (for demo purposes only)
+					classie.add( bttn, 'active' );
+					setTimeout( function() {
+
+						path.animate( { 'path' : pathConfig.to }, 300, mina.easeinout );
+
+						classie.remove( bttn, 'active' );
+						
+						// create the notification
+						var notification = new NotificationFx({
+							wrapper : svgshape,
+							message : '<p><span class="icon icon-bulb"></span> I\'m Going To be the Future Notification.</p>',
+							layout : 'other',
+							effect : 'cornerexpand',
+							type : 'notice', // notice, warning or error
+							onClose : function() {
+								bttn.disabled = false;
+								setTimeout(function() {
+									path.animate( { 'path' : pathConfig.from }, 300, mina.easeinout );
+								}, 200 );
+							}
+						});
+
+						// show the notification
+						notification.show();
+
+					}, 1200 );
+					
+					// disable the button (for demo purposes only)
+					this.disabled = true;
+				} );
+			})();
+		</script>
+	</body>
+</html>

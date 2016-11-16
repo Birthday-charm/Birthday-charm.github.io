@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<link rel="shortcut icon" type="image/png" href="images/favicon.png">
+        <title>Neelam(Beauty beyond Imagination)</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="shortcut icon" href="../favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="css/style2.css" />
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300,300italic' rel='stylesheet' type='text/css'>
+		<script type="text/javascript" src="js/modernizr.custom.79639.js"></script> 
+		<!--[if lte IE 8]><style>.main{display:none;} .support-note .note-ie{display:block;}</style><![endif]-->
+    </head>
+    <body>
+        <div class="container">
+			
+			<header>
+			
+				<h1><span>Neelam Shah</span></h1>
+				<h2>Choose From Different Menu Given Below</h2>
+				
+				<div class="support-note"><!-- let's check browser support with modernizr -->
+					<!--span class="no-cssanimations">CSS animations are not supported in your browser</span-->
+					<span class="no-csstransforms">CSS transforms are not supported in your browser</span>
+					<!--span class="no-csstransforms3d">CSS 3D transforms are not supported in your browser</span-->
+					<span class="no-csstransitions">CSS transitions are not supported in your browser</span>
+					<span class="note-ie">Sorry, only modern browsers.</span>
+				</div>
+				
+			</header>
+			
+			<section class="main">
+			
+				<div id="sb-container" class="sb-container">	
+					<div>
+					<a href="Reason.html">
+						<span><a href="Reason.html"><img src="images/rsn.png" width="50px" height="60px" style="margin-top:5px;"></a></span>
+						<h4><span><a href="Reason.html">26 Reasons To love U</a></span></h4>
+					</a>
+					</div>	
+					<div>
+						<span><a href="notify/index.html"><img src="images/tml.png" width="50px" height="60px" style="margin-top:5px;"></a></span>
+						<h4><a href="notify/index.html"><span>Our TimeLine</a></span></h4>											
+					</div>	
+					<!--<div>
+						<span><img src="images/wsh.jpg" width="50px" height="60px" style="margin-top:5px;"></span>
+						<h4><span>My Wishes</span></h4>											
+					</div>-->	
+					<div>
+						<span><a href="p/index.html"><img src="images/gft.jpg" width="80px" height="60px" style="margin-top:5px;"></a></span>
+						<h4><a href="p/index.html"><span>Your Present</span></a></h4>											
+					</div>	
+					<div>
+						<span><a href="seg/index.html"><img src="images/flg.jpg" width="80px" height="60px" style="margin-top:5px;"></span>
+						<h4><a href="seg/index.html"><span>Feeling For U</span></a></h4>											
+					</div>
+					<div>
+						<span><a href="mvg.html"><img src="images/msg.jpg" width="80px" height="60px" style="margin-top:5px;"></a></span>
+						<h4><a href="mvg.html"><span>Message For U</span></a></h4>											
+					</div>
+					<div>
+						<h4><span>Happy Birthday</span></h4>
+						<span class="sb-toggle">Click to open/close</span>
+						<h5><span>&emsp; &emsp;I &hearts; You</span></h5>											
+					</div>
+					
+					
+				</div><!-- sb-container -->
+				
+			</section>
+			
+        </div>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.swatchbook.js"></script>
+		<script type="text/javascript">
+			$(function() {
+			
+				$( '#sb-container' ).swatchbook( {
+					// number of degrees that is between each item
+					angleInc : -10,
+					// amount in degrees for the opened item's next sibling
+					proximity : -45,
+					neighbor : -4,
+					// index of the element that when clicked, triggers the open/close function
+					// by default there is no such element
+					closeIdx : 11
+				} );
+			
+			});
+		</script>
+    </body>
+</html>
